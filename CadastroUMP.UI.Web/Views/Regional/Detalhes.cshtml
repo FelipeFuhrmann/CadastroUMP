@@ -1,0 +1,22 @@
+﻿@model CadastroUMP.Dominio.Regional
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Regional</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeRegional)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeRegional)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.RegionalId }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

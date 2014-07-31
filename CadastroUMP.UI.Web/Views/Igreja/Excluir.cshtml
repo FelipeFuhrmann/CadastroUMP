@@ -1,0 +1,26 @@
+﻿@model CadastroUMP.Dominio.Igreja
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Deseja realmente excluir?</h3>
+<fieldset>
+    <legend>Igreja</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeIgreja)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeIgreja)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+}

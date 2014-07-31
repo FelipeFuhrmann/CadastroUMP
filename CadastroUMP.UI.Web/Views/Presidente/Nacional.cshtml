@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Presidente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<span class="label label-primary"> Cadastro de Presidentes:</span>*@
+
+<p>
+    <button type="button" class="btn btn-primary ">@Html.ActionLink("Cadastrar Novo", "Cadastrar")</button>
+</p>
+<table class="table table-striped">
+    <tr class="info">
+        <th>
+            @Html.DisplayNameFor(model => model.NomePresidente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VigenciaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VigenciaFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo.TipoCargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RelacionadoId)
+        </th>
+        <th>
+           
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePresidente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VigenciaInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VigenciaFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo.TipoCargo)
+            </td>
+
+            <th>
+                @Html.DisplayFor(modelItem => item.Relacionado.Descricao)
+            </th>
+
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.PresidenteId }) |
+                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.PresidenteId }) |
+                @Html.ActionLink("Excluir", "Excluir", new { id = item.PresidenteId })
+            </td>
+        </tr>
+    }
+
+</table>

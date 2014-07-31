@@ -1,0 +1,71 @@
+﻿@model CadastroUMP.Dominio.Presidente
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Presidente</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.NomePresidente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomePresidente)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Sexo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sexo)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.VigenciaInicio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VigenciaInicio)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.VigenciaFinal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.VigenciaFinal)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Usuario)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Cargo.TipoCargo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cargo.TipoCargo)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" />
+        |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+}

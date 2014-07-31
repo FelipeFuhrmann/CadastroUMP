@@ -1,0 +1,22 @@
+﻿@model CadastroUMP.Dominio.Sinodal
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Sinodal</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeSinodal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeSinodal)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id=Model.SinodalId }) |
+    @Html.ActionLink("Voltar ", "Index")
+</p>

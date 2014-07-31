@@ -1,0 +1,38 @@
+﻿@model CadastroUMP.Dominio.Regional
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Regional</legend>
+
+        @Html.HiddenFor(model => model.RegionalId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeRegional)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeRegional)
+            @Html.ValidationMessageFor(model => model.NomeRegional)
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

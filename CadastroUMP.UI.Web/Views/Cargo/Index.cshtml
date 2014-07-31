@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Cargo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar novo cargo", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeCargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCargo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeCargo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoCargo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.CargoId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.CargoId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.CargoId })
+        </td>
+    </tr>
+}
+
+</table>

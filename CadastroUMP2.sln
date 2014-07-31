@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUMP.Aplicacao", "CadastroUMP.Aplicacao\CadastroUMP.Aplicacao.csproj", "{E0139F66-52C5-45BE-93D1-39AC355D0BB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUMP.Repositorio", "CadastroUMP.Repositorio\CadastroUMP.Repositorio.csproj", "{1B0F41D8-B5D4-4D90-9FB2-C9376E38616E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUMP.Dominio", "CadastroUMP.Dominio\CadastroUMP.Dominio.csproj", "{3B4B534E-C901-4745-B139-82920EAD0DAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroUMP.UI.Web", "CadastroUMP.UI.Web\CadastroUMP.UI.Web.csproj", "{68D39D20-E196-43D0-A28C-EADE2969C7AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0139F66-52C5-45BE-93D1-39AC355D0BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0139F66-52C5-45BE-93D1-39AC355D0BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0139F66-52C5-45BE-93D1-39AC355D0BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0139F66-52C5-45BE-93D1-39AC355D0BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B0F41D8-B5D4-4D90-9FB2-C9376E38616E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B0F41D8-B5D4-4D90-9FB2-C9376E38616E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B0F41D8-B5D4-4D90-9FB2-C9376E38616E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B0F41D8-B5D4-4D90-9FB2-C9376E38616E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B4B534E-C901-4745-B139-82920EAD0DAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4B534E-C901-4745-B139-82920EAD0DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4B534E-C901-4745-B139-82920EAD0DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4B534E-C901-4745-B139-82920EAD0DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D39D20-E196-43D0-A28C-EADE2969C7AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D39D20-E196-43D0-A28C-EADE2969C7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D39D20-E196-43D0-A28C-EADE2969C7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D39D20-E196-43D0-A28C-EADE2969C7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

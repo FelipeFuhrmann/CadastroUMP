@@ -1,0 +1,26 @@
+﻿@model CadastroUMP.Dominio.Regional
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Deseja realmente excluir?</h3>
+<fieldset>
+    <legend>Regional</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeRegional)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeRegional)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Excluir" /> |
+        @Html.ActionLink("Cancelar", "Index")
+    </p>
+}

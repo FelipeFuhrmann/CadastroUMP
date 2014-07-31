@@ -1,0 +1,52 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Presidente>
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <a class="logo2">
+        <img src="~/Content/img/ump_logo.jpg" style="margin-left: 900px; position: relative; z-index: 1 " alt="">
+    </a>
+</div>
+<h2>Relatório de Presidentes:</h2>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomePresidente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo.TipoCargo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RelacionadoId)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePresidente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo.TipoCargo)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Relacionado.Descricao)
+            </td>
+        </tr>
+    }
+
+</table>

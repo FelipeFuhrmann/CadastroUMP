@@ -1,0 +1,58 @@
+﻿@model CadastroUMP.Dominio.Presidente
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+<style type="text/css">
+    .display-field
+    {
+    }
+</style>
+<div class="well">
+    <h4>Detalhes</h4>
+
+    <fieldset>
+        <div class="panel panel-primary">
+            <div class="panel-heading">@Html.DisplayNameFor(model => model.NomePresidente)</div>
+            <div class="panel-body">
+                @Html.DisplayFor(model => model.NomePresidente)
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">@Html.DisplayNameFor(model => model.Sexo)</div>
+            <div class="panel-body">
+                @Html.DisplayFor(model => model.Sexo)
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">@Html.DisplayNameFor(model => model.Email)</div>
+            <div class="panel-body">
+                @Html.DisplayFor(model => model.Email)
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">@Html.DisplayNameFor(model => model.VigenciaInicio)</div>
+            <div class="panel-body">
+                @Html.DisplayFor(model => model.VigenciaInicio)
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">@Html.DisplayNameFor(model => model.VigenciaFinal)</div>
+            <div class="panel-body">
+                @Html.DisplayFor(model => model.VigenciaFinal)
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">@Html.DisplayNameFor(model => model.Cargo.TipoCargo)</div>
+            <div class="panel-body">
+                @Html.DisplayFor(model => model.Cargo.TipoCargo)
+            </div>
+        </div>
+
+    </fieldset>
+    <p>
+        <button type="submit" class="btn btn-primary ">@Html.ActionLink("Editar", "Editar", new { id = Model.PresidenteId })</button>
+        <button type="submit" class="btn btn-primary ">@Html.ActionLink("Voltar", "Nacional")</button>
+    </p>
+
+</div>

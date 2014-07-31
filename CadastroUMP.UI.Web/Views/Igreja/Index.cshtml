@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Igreja>
+
+@{
+    ViewBag.Title = "Lista de Igrejas";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastar uma nova igreja ", "Cadastrar")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeIgreja)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeIgreja)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.IgrejaId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.IgrejaId }) |
+            @Html.ActionLink("Excluir", "Excluir", new { id=item.IgrejaId })
+        </td>
+    </tr>
+}
+
+</table>

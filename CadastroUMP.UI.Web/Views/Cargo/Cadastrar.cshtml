@@ -1,0 +1,44 @@
+﻿@model CadastroUMP.Dominio.Cargo
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Cargo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeCargo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeCargo)
+            @Html.ValidationMessageFor(model => model.NomeCargo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoCargo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TipoCargo)
+            @Html.ValidationMessageFor(model => model.TipoCargo)
+        </div>
+
+        <p>
+            <input type="submit" value="Cadastrar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

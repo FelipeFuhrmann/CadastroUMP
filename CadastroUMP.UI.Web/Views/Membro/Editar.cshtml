@@ -1,0 +1,130 @@
+﻿@using CadastroUMP.Dominio
+@model CadastroUMP.Dominio.Membro
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Membro</legend>
+
+        @Html.HiddenFor(model => model.MembroId)
+        @Html.HiddenFor(model => model.Igreja.IgrejaId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeMembro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeMembro)
+            @Html.ValidationMessageFor(model => model.NomeMembro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IdadeMembro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IdadeMembro)
+            @Html.ValidationMessageFor(model => model.IdadeMembro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TelefoneMembro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TelefoneMembro)
+            @Html.ValidationMessageFor(model => model.TelefoneMembro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sexo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sexo)
+            @Html.ValidationMessageFor(model => model.Sexo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="editor-label">
+            Estado
+        </div>
+
+        <div class="editor-field">
+            <select id="Estado_EstadoId" name="Estado.EstadoId">
+                <option value="0">Selecione...</option>
+                @foreach (var estado in (List<Estado>)ViewBag.Estados)
+                {
+                    <option value="@estado.EstadoId">@estado.NomeEstado</option>
+                }
+            </select>
+        </div>
+
+        <div class="editor-label">
+            Cidade
+        </div>
+        <div class="editor-field">
+            <p id="selectCidade">
+                <select id="Cidade_CidadeId" name="Cidade.CidadeId">
+                </select>
+            </p>
+        </div>
+
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script type="text/javascript" language="javascript">
+
+    $(function () {
+        $("#Estado_EstadoId").change(function () {
+            console.log('mudou');
+            if (possuiEstadoSelecionado()) {
+                $("#selectCidade").fadeIn();
+                carregarCidadeDoEstado();
+            } else {
+                limparCidadesCarregadas();
+                $("#selectCidade").fadeOut();
+                
+            }
+        });
+    });
+    function possuiEstadoSelecionado() {
+        return $("#Estado_EstadoId").val() != "0";
+    }
+    function carregarCidadeDoEstado() {
+        var url = "http://localhost:1072/cidade?idEstado=" + $("#Estado_EstadoId").val();
+        $.getJSON(url, null, function (data) {
+
+            limparCidadesCarregadas();
+            $.each(data, function (indice, cidade) {
+                $("#Cidade_CidadeId").append("<option value='" + cidade.CidadeId + "'>" + cidade.NomeCidade + "</option>");
+            });
+        });
+    }
+    function limparCidadesCarregadas() {
+        $("#Cidade_CidadeId").empty();
+
+    }
+</script>

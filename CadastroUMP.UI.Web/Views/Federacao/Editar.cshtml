@@ -1,0 +1,40 @@
+﻿@model CadastroUMP.Dominio.Federacao
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>Editar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Federacao</legend>
+
+        @Html.HiddenFor(model => model.FederacaoId)
+        @Html.HiddenFor(model => model.Sinodal.SinodalId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeFederacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeFederacao)
+            @Html.ValidationMessageFor(model => model.NomeFederacao)
+        </div>
+        
+        <p>
+            <input type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

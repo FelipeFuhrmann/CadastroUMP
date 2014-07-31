@@ -1,0 +1,62 @@
+﻿ADMINISTRADOR CADASTRA:
+	Cadastra o presidente da nacional;
+
+PRESIDENTE NACIONAL CADASTRA:
+	Cadastra os presidentes das **regionais**;
+	As regionais são 5: (Norte, Sul, Sudeste, Nordeste e Centro Oeste); 
+
+PRESIDENTE DA REGIONAL CADASTRA:
+	Cadastra as **sinodais** da sua **regional**;
+	Para cada sinodal cadastrada ele seta seu presidente;
+
+PRESIDENTE DA SINODAL CADASTRA:
+	Cadastra todas as **federações** da sua **sinodal**;
+	Para cada federações cadastrada ele seta seu presidente;
+
+PRESIDENTE DA FEDERAÇÃO CADASTRA:
+	Cadastra todas as **igrejas** da sua **federação**
+	Para cada igreja cadastrada ele seta seu presidente;
+
+PRESIDENTE DA IGREJA (local) CADASTRA:
+	Cadastra os membros da **igreja**
+
+
+	NACIONAL -------------------
+	Presidente: Cleyton, Cargo: Nacional
+
+	REGIONAL -------------------
+	Regional: Note
+	Regional: Sul
+
+	Presidente: Anderson,	Cargo: Regional, Regional: Norte
+	Presidente: Miely,		Cargo: Regional, Regional: Sul
+
+	SINODAL --------------------
+	Sinodal: Noroeste do Brasil,	Regional: Norte
+	Sinodal: Sul do Brasil,			Regional: Sul
+	
+	Presidente: Marcos		Cargo: Sinodal		Sinodal: Noroeste do Brasil
+	Presidente: Jonas		Cargo: Sinodal		Sinodal: Sul do Brasil	
+
+	FEDERAÇÃO -----------------
+	Federação: Presbiterio de Porto Velho	Sinodal: Noroeste do Brasil
+	Federação: Presbiterio de Sul de RO		Sinodal: Sul do Brasil
+
+	Presidente: Igor		Cargo: Federação	Federação: Presbiterio de Porto Velho
+	Presidente: Renata		Cargo: Federação	Federação: Sul do Brasil
+
+	IGREJA (local) ------------
+	Igreja: Presbiteriana de Ariquemes	Federação: Presbiterio de Porto Velho
+	Igreja: Presbiteriana de Vilhena	Federação: Presbiterio de Sul de RO
+
+	Presidente: Pedro		Cargo: Local	Igreja: Presbiteriana de Ariquemes
+	Presidente: Raimunda	Cargo: Local	Igreja: Presbiteriana de Vilhena
+
+	MEMBRO --------------------
+	Nome: Otavio	Igreja: Presbiteriana de Ariquemes
+	Nome: Ana		igreja: Presbiteriana de Vilhena
+
+	SELECT PRESIDENTEID, NOME_PRESIDENTE, SEXO, EMAIL, VIGENCIA_INICIO, VIGENCIA_FINAL, PRESIDENTE.CARGOID, PRESIDENTE.RELACIONADOID 
+FROM PRESIDENTE, CARGO, SINODAL WHERE PRESIDENTE.CARGOID = 7 AND  RELACIONADOID  IN (SELECT  SINODALID FROM SINODAL WHERE REGIONALID = 1) 
+GROUP BY PRESIDENTEID, NOME_PRESIDENTE, SEXO, EMAIL, VIGENCIA_INICIO, VIGENCIA_FINAL, PRESIDENTE.CARGOID, PRESIDENTE.RELACIONADOID;
+

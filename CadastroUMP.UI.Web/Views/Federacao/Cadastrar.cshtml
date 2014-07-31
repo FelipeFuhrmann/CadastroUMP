@@ -1,0 +1,36 @@
+﻿@model CadastroUMP.Dominio.Federacao
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Federacao</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NomeFederacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeFederacao)
+            @Html.ValidationMessageFor(model => model.NomeFederacao)
+        </div>
+        <p>
+            <input type="submit" value="Cadastrar" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("VOltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

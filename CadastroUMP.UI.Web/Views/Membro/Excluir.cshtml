@@ -1,0 +1,54 @@
+﻿@model CadastroUMP.Dominio.Membro
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Membro</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeMembro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeMembro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdadeMembro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdadeMembro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TelefoneMembro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TelefoneMembro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sexo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sexo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,50 @@
+﻿@model CadastroUMP.Dominio.Membro
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<fieldset>
+    <legend>Membro</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NomeMembro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NomeMembro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IdadeMembro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IdadeMembro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TelefoneMembro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TelefoneMembro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sexo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sexo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MembroId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

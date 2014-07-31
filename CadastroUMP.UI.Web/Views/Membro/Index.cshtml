@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Membro>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    
+</p>
+
+<form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+        <button type="button" class="btn btn-primary ">@Html.ActionLink("Cadastrar Novo", "Cadastrar")</button>
+        <input type="text" class="form-control" placeholder="Search">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+
+</form>
+
+<form action="@Url.Action("Buscar")" method="GET">
+
+    <label>Digite o nome de um membro:</label>
+    <input type="text" name="nome" id="nome" />
+    <button type="submit" class="btn btn-default">Buscar</button>
+
+    
+</form>
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdadeMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefoneMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdadeMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefoneMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.MembroId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.MembroId }) |
+            @Html.ActionLink("Apagar", "Excluir", new { id = item.MembroId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,62 @@
+﻿@using CadastroUMP.UI.Web.Helpers
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<em>@ViewBag.erro</em>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="ThemeBucket">
+<link rel="shortcut icon" href="~/Content/img/favicon.png">
+
+<!--Core CSS -->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/bootstrap-reset.css" rel="stylesheet">
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="~/Content/style.css" rel="stylesheet">
+<link href="~/Content/style-responsive.css" rel="stylesheet" />
+
+<!-- Just for debugging purposes. Don't actually copy this line! -->
+<!--[if lt IE 9]><script src="js/ie8/ie8-responsive-file-warning.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+
+@if (!Seguranca.Autenticado())
+{
+
+    <body class="login-body">
+
+        <div class="container">
+            <form class="form-signin" method="POST">
+                <h2 class="form-signin-heading">Conectar ao CEUMP</h2>
+                <div class="login-wrap">    
+                    <div class="user-login-info">
+                        <input type="text" class="form-control" name="usuario" style="width: 100%" placeholder="usuario" autofocus>
+                        <input type="password" class="form-control" name="senha" style="width: 100%" placeholder="senha">
+                    </div>
+                    <input class="btn btn-lg btn-login btn-block" type="submit" value="Acessar" />
+                </div>
+
+            </form>
+        </div>
+        <!-- Placed js at the end of the document so the pages load faster -->
+        <!--Core js-->
+    </body>
+}
+else
+{
+    <h3>Você esta logado, clique em sair</h3>
+}
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>

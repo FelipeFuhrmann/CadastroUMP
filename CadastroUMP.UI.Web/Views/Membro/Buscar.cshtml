@@ -1,0 +1,73 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Membro>
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    <h2>Index</h2>
+
+    <p>
+        <button type="button" class="btn btn-primary ">@Html.ActionLink("Cadastrar um membro", "Cadastrar")</button>
+    </p>
+   <h2>Buscar</h2>
+}
+<br />
+Digite o nome de um membro:
+       
+
+<form action="@Url.Action("Buscar")" method="GET">
+
+    <label>Buscar:</label><input type="text" name="nome" id="nome" />
+    <input type="submit" value="Buscar" />
+
+</form>
+
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdadeMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefoneMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdadeMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefoneMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.MembroId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id = item.MembroId }) |
+            @Html.ActionLink("Apagar", "Excluir", new { id = item.MembroId })
+            </td>
+        </tr>
+    }
+
+</table>
