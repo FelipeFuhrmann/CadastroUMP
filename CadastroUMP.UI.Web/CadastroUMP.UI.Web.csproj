@@ -154,7 +154,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\datepicker.css" />
     <Content Include="Content\estilos-relatorio.css" />
-    <Content Include="Content\img\avatar1_small.jpg" />
     <Content Include="Content\img\favicon.png" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\img\header-bg.jpg" />

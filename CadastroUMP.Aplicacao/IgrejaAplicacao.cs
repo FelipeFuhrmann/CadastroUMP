@@ -130,7 +130,7 @@ namespace CadastroUMP.Aplicacao
         {
             using (contexto = new Contexto())
             {
-                var strQuery = "SELECT * FROM IGREJA WHERE FEDERACAOID=" + relacionadoId + "AND IGREJA.IGREJAID NOT IN (SELECT  PRESIDENTE.RELACIONADOID FROM PRESIDENTE WHERE  PRESIDENTE.CARGOID = 12)";
+                var strQuery = "SELECT * FROM IGREJA WHERE FEDERACAOID=" + relacionadoId + "AND IGREJA.IGREJAID NOT IN (SELECT  PRESIDENTE.RELACIONADOID FROM PRESIDENTE WHERE  PRESIDENTE.CARGOID = 5)";
                 var retornoDataReader = contexto.ExecutaComandoComRetorno(strQuery);
                 return TransformaReaderEmListaDeObjeto(retornoDataReader);
             }
