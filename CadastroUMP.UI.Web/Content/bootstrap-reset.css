@@ -231,7 +231,7 @@ ul {
 
 /*dropdown select bg*/
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-    background-color: #474752;
+    background-color: #428bca;
     color: #FFFFFF;
     text-decoration: none;
 }

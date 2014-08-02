@@ -375,7 +375,9 @@ a.logo:hover,a.logo:focus {
 }
 a.logo span {
     color: #FF6C60;
-}
+	margin-left:80px !important;
+	margin-top:40px !important;
+	}
 /*notification*/
 #top_menu .nav>li,ul.top-menu>li {
     float:left;
