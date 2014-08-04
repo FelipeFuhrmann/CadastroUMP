@@ -262,7 +262,9 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -305,7 +307,6 @@
     <Content Include="Views\Presidente\Detalhes.cshtml" />
     <Content Include="Views\Presidente\Excluir.cshtml" />
     <Content Include="Views\Home\Painel.cshtml" />
-    <Content Include="Views\Membro\Cadastrar.cshtml" />
     <Content Include="Views\Membro\Editar.cshtml" />
     <Content Include="Views\Membro\Detalhes.cshtml" />
     <Content Include="Views\Membro\Excluir.cshtml" />
@@ -313,6 +314,8 @@
     <Content Include="Views\Relatorio\Modelo.cshtml" />
     <Content Include="Views\Membro\Buscar.cshtml" />
     <Content Include="Views\Presidente\EditarPerfil.cshtml" />
+    <Content Include="Views\Membro\Cadastrar.cshtml" />
+    <Content Include="Views\Relatorio\MembrosNacional.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

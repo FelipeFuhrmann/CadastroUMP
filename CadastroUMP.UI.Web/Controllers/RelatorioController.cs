@@ -13,15 +13,14 @@ namespace CadastroUMP.UI.Web.Controllers
     public class RelatorioController : Controller
     {
 
-       
-        public ActionResult PDFPadrao()
 
+        public ActionResult PDFPadrao()
         {
             var tipoCargo = Session["permissao"].ToString().ToLower();
             var relacionadoId = Session["relacionadoId"].ToString();
 
             var appPresidente = new PresidenteAplicacao();
-           
+
             var listaDePresidente = appPresidente.ListarTodos(tipoCargo, relacionadoId);
 
             var pdf = new ViewAsPdf
@@ -33,7 +32,7 @@ namespace CadastroUMP.UI.Web.Controllers
 
         }
 
-        
+
         /* Retorna a view simples em HTML, usada como modelo para gerar o PDF */
 
         public ActionResult Modelo()
@@ -47,7 +46,7 @@ namespace CadastroUMP.UI.Web.Controllers
         * ViewName é setado somente para utilizar o proprio Modelo anterior
         * Caso não queira setar o ViewName, você deve gerar a view com o mesmo nome da action
         */
- 
+
 
         /*
         * Configura algumas propriedades do PDF, inclusive o nome do arquivo gerado,
@@ -55,12 +54,11 @@ namespace CadastroUMP.UI.Web.Controllers
         */
 
         public ActionResult PDFConfigurado()
-
         {
             var tipoCargo = Session["permissao"].ToString().ToLower();
             var relacionadoId = Session["relacionadoId"].ToString();
             var appPresidente = new PresidenteAplicacao();
-           
+
             var listaDePresidente = appPresidente.ListarTodos(tipoCargo, relacionadoId);
             var pdf = new ViewAsPdf
             {
@@ -69,12 +67,37 @@ namespace CadastroUMP.UI.Web.Controllers
                 FileName = "NomeDoArquivoPDF.pdf",
                 PageSize = Size.A4,
                 IsGrayScale = true,
-                PageMargins = new Margins {Bottom = 5, Left = 5, Right = 5, Top = 5},
+                PageMargins = new Margins { Bottom = 5, Left = 5, Right = 5, Top = 5 },
             }
             ;
             return pdf;
         }
+
+
+        public ActionResult MembrosNacional()
+        {
+
+            return View();
+        }
+
+        public ActionResult MembrosPorRegiao()
+        {
+            var appRelatorio = new RelatorioAplicacao();
+            var listaDeMmembros = appRelatorio.ListarMembrosPorRegionais();
+
+            var pdf = new ViewAsPdf
+                       {
+                           ViewName = "MembrosNacional",
+                           Model = listaDeMmembros
+                       };
+            return pdf;
+
+        }
+
+
+
     }
+
 }
 
 

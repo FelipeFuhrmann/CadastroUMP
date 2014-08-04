@@ -61,38 +61,7 @@
 
 <script type="text/javascript" language="javascript">
 
-    ///***Federaçao***
-    $(function () {
-        $("#Sinodal_SinodalId").change(function () {
-            console.log('federacao');
-            if (possuiSinodalSelecionado()) {
-                $("#selectFederacao").fadeIn();
-                carregarFederacaoDaSinodal();
-            } else {
-                limparFederacoesCarregadas();
-                $("#selectFederacao").fadeOut();
-            }
-        });
-    });
-
-    function possuiSinodalSelecionado() {
-        return $("#Sinodal_SinodalId").val() != "0";
-    }
-    function carregarFederacaoDaSinodal() {
-        var url = "http://ceump.apphb.com/Federacao/ListarPorID/" + $("#Sinodal_SinodalId").val();
-        $.getJSON(url, null, function (data) {
-
-            limparFederacoesCarregadas();
-            $.each(data, function (indice, federacao) {
-                $("#Federacao_FederacaoId").append("<option value='" + federacao.FederacaoId + "'>" + federacao.NomeFederacao + "</option>");
-            });
-        });
-    }
-    function limparFederacoesCarregadas() {
-        $("#Federacao_FederacaoId").empty();
-    }
-
-
+   
     ///***Cidade***
     $(function () {
         $("#Estado_EstadoId").change(function () {
@@ -111,7 +80,7 @@
         return $("#Estado_EstadoId").val() != "0";
     }
     function carregarCidadeDoEstado() {
-        var url = "http://ceump.apphb.com/cidade?idEstado=" + $("#Estado_EstadoId").val();
+        var url = "http://localhost:1072/cidade?idEstado=" + $("#Estado_EstadoId").val();
         $.getJSON(url, null, function (data) {
 
             limparCidadesCarregadas();

@@ -6,7 +6,7 @@ using CadastroUMP.Repositorio;
 
 namespace CadastroUMP.Aplicacao
 {
-   public class RegionalAplicacao
+    public class RegionalAplicacao
     {
         private Contexto contexto;
 
@@ -57,7 +57,7 @@ namespace CadastroUMP.Aplicacao
             }
         }
 
-        
+
 
         public List<Regional> ListarRegionais()
         {
@@ -104,5 +104,8 @@ namespace CadastroUMP.Aplicacao
             reader.Close();
             return regionais;
         }
+
+
+
     }
 }

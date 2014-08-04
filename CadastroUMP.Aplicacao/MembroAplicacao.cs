@@ -126,7 +126,7 @@ namespace CadastroUMP.Aplicacao
                     MembroId = int.Parse(reader["MEMBROID"].ToString()),
                     NomeMembro = reader["NOME_MEMBRO"].ToString(),
                     IdadeMembro = DateTime.Parse(reader["DATA_NASCIMENTO"].ToString()),
-                    TelefoneMembro = int.Parse(reader["TELEFONE_MEMBRO"].ToString()),
+                    TelefoneMembro = reader["TELEFONE_MEMBRO"].ToString(),
                     Sexo = reader["SEXO"].ToString(),
                     Email = reader["EMAIL"].ToString(),
                     Cidade = cidade,

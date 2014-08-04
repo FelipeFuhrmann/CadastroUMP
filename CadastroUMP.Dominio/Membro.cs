@@ -8,7 +8,7 @@ using System.Web;
 
 namespace CadastroUMP.Dominio
 {
-    public class Membro : IEnumerable
+    public class Membro 
     {
         public int MembroId { get; set; }
         
@@ -18,15 +18,17 @@ namespace CadastroUMP.Dominio
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime IdadeMembro { get; set; }
 
-        public int TelefoneMembro { get; set; }
+        public string TelefoneMembro { get; set; }
         public string Sexo { get; set; }
         public string Email { get; set; }
         public Cidade Cidade { get; set; }
         public Igreja Igreja { get; set; }
 
-        public IEnumerator GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+       
+
+        //public IEnumerator GetEnumerator()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

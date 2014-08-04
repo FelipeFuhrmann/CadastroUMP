@@ -45,9 +45,7 @@ namespace CadastroUMP.UI.Web.Controllers
             string filtro = FilhoDoUsuarioLogado()[1];
 
             var listaDePresidente = appPresidente.ListarPresidentes(tipoCargo, filtro);
-         //   var listaDeReferenciais = appPresidente.ListarReferenciaId(tipoCargo, filtro);
-
-         //   ViewBag.ReferencialId = listaDeReferenciais;
+        
             return View(listaDePresidente);
 
            }

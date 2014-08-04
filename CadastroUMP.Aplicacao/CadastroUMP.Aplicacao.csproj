@@ -51,6 +51,7 @@
     <Compile Include="PresidenteAplicacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegionalAplicacao.cs" />
+    <Compile Include="RelatorioAplicacao.cs" />
     <Compile Include="SinodalAplicacao.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -42,8 +42,8 @@ namespace CadastroUMP.UI.Web.Controllers
         {
             ViewBag.Estados = new EstadoAplicacao().ListarTodos();
 
-            var cidades = new CidadeAplicacao().ListarCidades();
-            ViewBag.Cidades = new SelectList(cidades, "CidadeId", "NomeCidade");
+            //var cidades = new CidadeAplicacao().ListarCidades();
+            //ViewBag.Cidades = new SelectList(cidades, "CidadeId", "NomeCidade");
             return View();
         }
 

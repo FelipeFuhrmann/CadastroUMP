@@ -14,7 +14,7 @@ namespace CadastroUMP.Aplicacao
         {
             using (contexto = new Contexto())
             {
-                var strQuery = "SELECT * FROM ESTADO ";
+                var strQuery = "SELECT * FROM ESTADO";
                 var retornoDataReader = contexto.ExecutaComandoComRetorno(strQuery);
                 return TransformaReaderEmListaDeObjeto(retornoDataReader);
             }
