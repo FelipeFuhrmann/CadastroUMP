@@ -96,11 +96,11 @@ namespace CadastroUMP.Aplicacao
             }
         }
 
-        public List<Membro> ListarPorNome(string nome)
+        public List<Membro> ListarPorNome(string nome, string relacionadoId)
         {
             using (contexto = new Contexto())
             {
-                var strQuery = string.Format("SELECT * FROM MEMBRO WHERE NOME_MEMBRO LIKE '%{0}%'", nome);
+                var strQuery = string.Format("SELECT * FROM MEMBRO WHERE NOME_MEMBRO LIKE '%{0}%' AND MEMBRO.IGREJAID = '{1}'", nome, relacionadoId);
                 var retornoDataReader = contexto.ExecutaComandoComRetorno(strQuery);
                 return TransformaReaderEmListaDeObjeto(retornoDataReader);
             }

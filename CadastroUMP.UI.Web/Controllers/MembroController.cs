@@ -9,7 +9,6 @@ using CadastroUMP.Dominio;
 using CadastroUMP.UI.Web.Helpers;
 
 namespace CadastroUMP.UI.Web.Controllers
-    
 {
     [Seguranca(Permissao = "local")]
     public class MembroController : Controller
@@ -110,18 +109,20 @@ namespace CadastroUMP.UI.Web.Controllers
             return View(membro);
         }
 
+
         public ActionResult Buscar(string nome)
         {
+            var relacionadoId = Session["relacionadoId"].ToString();
             var appMembro = new MembroAplicacao();
-            var membro = appMembro.ListarPorNome(nome);
+            var membro = appMembro.ListarPorNome(nome,relacionadoId);
 
             if (membro == null)
                 return HttpNotFound();
-            
+
             return View(membro);
         }
 
-       
+
         public ActionResult Excluir(int id)
         {
             var appMembro = new MembroAplicacao();
