@@ -20,7 +20,7 @@ namespace CadastroUMP.UI.Web.Controllers
 
         public ActionResult Cadastrar()
         {
-            
+
             return View();
         }
 
@@ -84,8 +84,7 @@ namespace CadastroUMP.UI.Web.Controllers
         }
 
 
-        public ActionResult ListarPorID (int id)
-
+        public ActionResult ListarPorID(int id)
         {
             var aplicacao = new SinodalAplicacao();
             var sinodais = aplicacao.ListarPorRegionalId(id);
@@ -109,9 +108,24 @@ namespace CadastroUMP.UI.Web.Controllers
         [HttpPost, ActionName("Excluir")]
         public ActionResult ExcluirConfirmado(int id)
         {
-            var appSinodal = new SinodalAplicacao();
-            appSinodal.ExcluirSinodal(id);
-            return RedirectToAction("Index");
+            var presidenteAplicacao = new PresidenteAplicacao();
+
+            var presidente = presidenteAplicacao.ListarRegionalPorCargoID(3).FirstOrDefault(x => x.RelacionadoId == id);
+
+            if (presidente == null)
+            {
+                var appSinodal = new SinodalAplicacao();
+                appSinodal.ExcluirSinodal(id);
+                return RedirectToAction("Index");
+            }
+            
+            ViewBag.Mensagem = "Não pode excluir";
+            return View("Error");
+
         }
+
     }
 }
+
+
+

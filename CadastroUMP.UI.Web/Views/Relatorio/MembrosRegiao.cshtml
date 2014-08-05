@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Relatorio>
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "MembrosNacional";
+}
+
+<h2>Quantidade de Membros por Região:</h2>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QtdMembro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Setor)
+        </th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Setor)
+            </td>
+        </tr>
+    }
+
+</table>
+
+

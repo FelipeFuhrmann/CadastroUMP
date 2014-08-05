@@ -126,10 +126,7 @@ namespace CadastroUMP.Aplicacao
         {
             using (contexto = new Contexto())
             {
-                var strQuery = "";
-                strQuery += " REGIONAL.REGIONALID, REGIONAL.NOME_REGIONAL, CARGO.CARGOID, CARGO.TIPO_CARGO ";
-                strQuery += " FROM REGIONAL, CARGO";
-                strQuery += " WHERE CARGO.TIPO_CARGO = 'Regional'";
+                var strQuery = string.Format("SELECT * FROM PRESIDENTE WHERE PRESIDENTE.CARGOID = {0}", idCargo);
                 var retornoDataReader = contexto.ExecutaComandoComRetorno(strQuery);
                 return TransformaReaderEmListaDeObjeto(retornoDataReader);
             }
@@ -153,7 +150,7 @@ namespace CadastroUMP.Aplicacao
                                 break;
 
                             case "regional":
-                                strQuery += " ";
+                                strQuery += " WHERE PRESIDENTE.CARGOID = CARGO.CARGOID AND ORDER BY TIPO_CARGO";
                                 break;
 
                             case "federação":

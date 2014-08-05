@@ -48,7 +48,6 @@
     <Compile Include="Membro.cs" />
     <Compile Include="Presidente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Referencia.cs" />
     <Compile Include="Regional.cs" />
     <Compile Include="Relatorio.cs" />
     <Compile Include="Sinodal.cs" />

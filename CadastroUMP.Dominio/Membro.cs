@@ -15,9 +15,11 @@ namespace CadastroUMP.Dominio
         [DisplayName("Nome do Membro")]
         public string NomeMembro { get; set; }
 
+         [DisplayName("Data de Nascimento")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime IdadeMembro { get; set; }
 
+         [DisplayName("Telefone")]
         public string TelefoneMembro { get; set; }
         public string Sexo { get; set; }
         public string Email { get; set; }
@@ -26,9 +28,5 @@ namespace CadastroUMP.Dominio
 
        
 
-        //public IEnumerator GetEnumerator()
-        //{
-        //    throw new NotImplementedException();
-        //}
-    }
+       }
 }

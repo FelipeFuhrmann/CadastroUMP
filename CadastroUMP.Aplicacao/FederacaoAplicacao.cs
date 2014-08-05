@@ -68,15 +68,14 @@ namespace CadastroUMP.Aplicacao
             }
         }
 
-        public List<Federacao> ListarPorSinodalId(int idSinodal)
+        public List<Federacao> ListarPorSinodalId(int relacionadoId)
         {
             using (contexto = new Contexto())
             {
                 var strQuery = "";
-                strQuery +=
-                    " SELECT FEDERACAO.FEDERACAOID, FEDERACAO.NOME_FEDERACAO, SINODAL.SINODALID, SINODAL.NOME_SINODAL ";
+                strQuery +=" SELECT FEDERACAO.FEDERACAOID, FEDERACAO.NOME_FEDERACAO, SINODAL.SINODALID, SINODAL.NOME_SINODAL ";
                 strQuery += " FROM FEDERACAO, SINODAL ";
-                strQuery += " WHERE FEDERACAO.SINODALID = SINODAL.SINODALID AND SINODAL.SINODALID = " + idSinodal;
+                strQuery += " WHERE FEDERACAO.SINODALID = SINODAL.SINODALID AND SINODAL.SINODALID = " + relacionadoId;
                 var retornoDataReader = contexto.ExecutaComandoComRetorno(strQuery);
                 return TransformaReaderEmListaDeObjeto(retornoDataReader);
             }

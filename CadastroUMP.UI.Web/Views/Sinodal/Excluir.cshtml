@@ -4,23 +4,25 @@
     ViewBag.Title = "Excluir";
 }
 
-<h2>Excluir</h2>
 
 <h3>Deseja realmente excluir?</h3>
-<fieldset>
-    <legend>Sinodal</legend>
 
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.NomeSinodal)
+<fieldset>
+    <p @ViewBag.Mensagem</p>
+
+    <div>
+        @Html.DisplayNameFor(model => model.NomeSinodal)
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.NomeSinodal)
     </div>
 </fieldset>
-@using (Html.BeginForm()) {
+
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     <p>
-        <input type="submit" value="Excluir" /> |
-        @Html.ActionLink("Cancelar", "Index")
+        <input type="submit" value="Excluir" />
+        |@Html.ActionLink("Cancelar", "Index")
     </p>
 }

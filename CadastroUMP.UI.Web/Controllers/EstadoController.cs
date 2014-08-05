@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using CadastroUMP.Aplicacao;
 using CadastroUMP.Dominio;
+using CadastroUMP.UI.Web.Helpers;
 
 namespace CadastroUMP.UI.Web.Controllers
 {
+    [Seguranca]
     public class EstadoController : Controller
     {
 

@@ -6,9 +6,12 @@ using System.Web;
 using System.Web.Mvc;
 using CadastroUMP.Aplicacao;
 using CadastroUMP.Dominio;
+using CadastroUMP.UI.Web.Helpers;
 
 namespace CadastroUMP.UI.Web.Controllers
+    
 {
+    [Seguranca(Permissao = "local")]
     public class MembroController : Controller
     {
         private Collection<string> FilhoDoUsuarioLogado()
@@ -118,12 +121,7 @@ namespace CadastroUMP.UI.Web.Controllers
             return View(membro);
         }
 
-        public ActionResult ResultadoBusca()
-        {
-            return View();
-        }
-
-
+       
         public ActionResult Excluir(int id)
         {
             var appMembro = new MembroAplicacao();

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CadastroUMP.Dominio.Relatorio>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MembrosFederacao</title>
+    <h2>Relatório de membros por federacão:</h2>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdMembro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Setor)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdMembro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Setor)
+            </td>
+           </tr>
+    }
+    
+    </table>
+</body>
+</html>

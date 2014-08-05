@@ -9,7 +9,7 @@ namespace CadastroUMP.Dominio
     public class Relatorio
     {
         public int QtdMembro { get; set; }
-        public string Regional { get; set; }
+        public string Setor { get; set; }
         
     }
 

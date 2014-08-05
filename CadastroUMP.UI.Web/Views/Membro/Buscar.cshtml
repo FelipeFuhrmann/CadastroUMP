@@ -5,23 +5,21 @@
 
 @using (Html.BeginForm())
 {
-    <h2>Index</h2>
-
-    <p>
-        <button type="button" class="btn btn-primary ">@Html.ActionLink("Cadastrar um membro", "Cadastrar")</button>
-    </p>
-   <h2>Buscar</h2>
+  
+    <nav class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary " style="color: white">@Html.ActionLink("Cadastrar Novo", "Cadastrar")</button>
+            <button type="submit" class="btn btn-primary ">@Html.ActionLink("Mostrar Todos", "Index")</button>
+            <form action="@Url.Action("Buscar")" method="GET">
+                <label>Digite um nome:</label>
+                <input type="text" name="nome" id="nome" />
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+        </div>
+    </nav>
+ 
 }
-<br />
-Digite o nome de um membro:
-       
 
-<form action="@Url.Action("Buscar")" method="GET">
-
-    <label>Buscar:</label><input type="text" name="nome" id="nome" />
-    <input type="submit" value="Buscar" />
-
-</form>
 
 
 <table class="table table-striped">

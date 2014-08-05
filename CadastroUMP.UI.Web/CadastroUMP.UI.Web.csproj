@@ -129,7 +129,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\CidadeController.cs" />
     <Compile Include="Controllers\EstadoController.cs" />
     <Compile Include="Controllers\FederacaoController.cs" />
@@ -160,7 +159,6 @@
     <Content Include="Content\img\Logo 02.png" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\img\ump_logo.jpg" />
-    <Content Include="Content\personal.css" />
     <Content Include="Content\style-responsive.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -276,16 +274,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Cargo\Index.cshtml" />
-    <Content Include="Views\Cargo\Cadastrar.cshtml" />
-    <Content Include="Views\Cargo\Editar.cshtml" />
-    <Content Include="Views\Cargo\Detalhes.cshtml" />
-    <Content Include="Views\Cargo\Excluir.cshtml" />
-    <Content Include="Views\Regional\Index.cshtml" />
-    <Content Include="Views\Regional\Cadastrar.cshtml" />
-    <Content Include="Views\Regional\Editar.cshtml" />
-    <Content Include="Views\Regional\Detalhes.cshtml" />
-    <Content Include="Views\Regional\Excluir.cshtml" />
     <Content Include="Views\Federacao\Index.cshtml" />
     <Content Include="Views\Federacao\Cadastrar.cshtml" />
     <Content Include="Views\Federacao\Editar.cshtml" />
@@ -315,7 +303,10 @@
     <Content Include="Views\Membro\Buscar.cshtml" />
     <Content Include="Views\Presidente\EditarPerfil.cshtml" />
     <Content Include="Views\Membro\Cadastrar.cshtml" />
-    <Content Include="Views\Relatorio\MembrosNacional.cshtml" />
+    <Content Include="Views\Relatorio\MembrosRegiao.cshtml" />
+    <Content Include="Views\Relatorio\MembrosSinodal.cshtml" />
+    <Content Include="Views\Relatorio\MembrosIgreja.cshtml" />
+    <Content Include="Views\Relatorio\MembrosFederacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

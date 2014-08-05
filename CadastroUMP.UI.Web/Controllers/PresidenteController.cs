@@ -8,7 +8,7 @@ using CadastroUMP.UI.Web.Helpers;
 
 namespace CadastroUMP.UI.Web.Controllers
 {
-    // [Seguranca]
+    [Seguranca]
     public class PresidenteController : Controller
     {
 
@@ -45,10 +45,10 @@ namespace CadastroUMP.UI.Web.Controllers
             string filtro = FilhoDoUsuarioLogado()[1];
 
             var listaDePresidente = appPresidente.ListarPresidentes(tipoCargo, filtro);
-        
+
             return View(listaDePresidente);
 
-           }
+        }
 
         public ActionResult Cadastrar()
         {
@@ -180,14 +180,14 @@ namespace CadastroUMP.UI.Web.Controllers
 
         public ActionResult EditarPerfil()
         {
-           
+
             var presidenteId = int.Parse(Session["presidenteId"].ToString());
             var appPresidente = new PresidenteAplicacao();
             var presidente = appPresidente.ListarPorId(presidenteId);
 
             if (presidente == null)
-                return HttpNotFound();           
-           
+                return HttpNotFound();
+
 
             return View(presidente);
         }
@@ -202,7 +202,7 @@ namespace CadastroUMP.UI.Web.Controllers
                 appPresidente.SalvarPresidente(presidente);
                 return RedirectToAction("Nacional");
             }
-           
+
 
             return View(presidente);
         }

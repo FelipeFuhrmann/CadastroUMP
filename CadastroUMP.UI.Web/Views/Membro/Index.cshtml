@@ -4,27 +4,18 @@
     ViewBag.Title = "Index";
 }
 
-<p>
-    
-</p>
 
-<form class="navbar-form navbar-left" role="search">
-    <div class="form-group">
-        <button type="button" class="btn btn-primary ">@Html.ActionLink("Cadastrar Novo", "Cadastrar")</button>
-        <input type="text" class="form-control" placeholder="Search">
-        <button type="submit" class="btn btn-primary">Buscar</button>
-    </div>
+    <nav class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <button type="button" class="btn btn-primary " style="color: white">@Html.ActionLink("Cadastrar Novo", "Cadastrar")</button>
+            <form action="@Url.Action("Buscar")" method="GET">
+                <label>Digite um nome:</label>
+                <input type="text" name="nome" id="nome" />
+                <button type="submit" class="btn btn-primary">Buscar</button>
+            </form>
+        </div>
+    </nav>
 
-</form>
-
-<form action="@Url.Action("Buscar")" method="GET">
-
-    <label>Digite o nome de um membro:</label>
-    <input type="text" name="nome" id="nome" />
-    <button type="submit" class="btn btn-default">Buscar</button>
-
-    
-</form>
 <table class="table table-striped">
     <tr>
         <th>
