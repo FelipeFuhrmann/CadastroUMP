@@ -80,7 +80,7 @@
         return $("#Estado_EstadoId").val() != "0";
     }
     function carregarCidadeDoEstado() {
-        var url = "http://localhost:1072/cidade?idEstado=" + $("#Estado_EstadoId").val();
+        var url = "http://ceump.apphb.com/cidade?idEstado=" + $("#Estado_EstadoId").val();
         $.getJSON(url, null, function (data) {
 
             limparCidadesCarregadas();
